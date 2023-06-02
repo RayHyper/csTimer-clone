@@ -43,9 +43,7 @@ document.querySelector("#main").alg = currentScramble
 document.addEventListener("keydown", function(event) {
         if (event.code === 'Space') {
             timer.style.color = "#00FF00"
-          
-          
-
+   
             }
 });
 
@@ -53,6 +51,7 @@ document.addEventListener("keydown", function(event) {
 document.addEventListener("keyup", function(event) {
 
     if (event.code === 'Space') {
+
         
         timer.style.color = "black"
        startTime = Date.now() - elapsedTime;
@@ -73,25 +72,31 @@ next.addEventListener("click", ()=>{
 let minStart = false
 
 function updateTime(){
+    
+
     elapsedTime = Date.now() - startTime;
 
     secs = Math.floor((elapsedTime/1000) % 60)
     mins= Math.floor((elapsedTime / (1000*60))%60)
-     mili = elapsedTime % 1000;
+    mili = (elapsedTime % 1000).toString().padStart(3, '0');
+     //mili = (elapsedTime % 1000);
 
-     mili = mili.toString().slice(0, -2);
+   mili = mili.toString().slice(0, -2);
 
+
+    console.log(mili)
     
     
 
 
-    if(secs >= 59 || minStart == true){
+    if(secs >= 60 || minStart == true){
         minStart = true
         timer.textContent  = mins + ":" + secs + "." + mili
     }
     else{
         timer.textContent  = secs + "." + mili
     }
+
  
 }
 
