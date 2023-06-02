@@ -8,6 +8,8 @@ const output = document.getElementById("output")
 const timer = document.getElementById("timer")
 const next = document.getElementById("next")
 let list = document.getElementById("list")
+const averageOut = document.getElementById("averageOut")
+const selectElement = document.getElementById("cubeType");
 
 //stopwatch variables
 let startTime = 0;
@@ -24,6 +26,8 @@ let started = false
 
 let nexted = false;
 
+let user_times = []
+
 
 async function main(){
 
@@ -39,8 +43,27 @@ output.textContent = currentScramble
 
 //set twisty player to scramble
 document.querySelector("#main").alg = currentScramble
+document.querySelector("#main").puzzle = "3x3x3"
 
 }
+
+async function main2(){
+
+    //generates new scramble
+    const scramble = await randomScrambleForEvent("222");
+    
+    //convert scramble to string
+    let currentScramble =  scramble.toString();
+    
+    
+    //output it
+    output.textContent = currentScramble
+    
+    //set twisty player to scramble
+    document.querySelector("#main").alg = currentScramble
+    document.querySelector("#main").puzzle = "2x2x2"
+    
+    }
 
 //generate new scramble when space is pressed
 document.addEventListener("keydown", function(event) {
@@ -66,6 +89,13 @@ document.addEventListener("keyup", function(event) {
             list.innerHTML += '<li>'+times + ". " + secs + '.' + mili + '</li>';
             times++;
             nexted = false
+            output.textContent = "Click next"
+
+            user_times.push(secs + "." + mili)
+
+            console.log(user_times)
+         
+
          
             
              
@@ -95,6 +125,39 @@ next.addEventListener("click", ()=>{
 
     main()
 
+    reset()
+
+    if(user_times.length === 5){
+        alert("You did it!")
+
+        let average = 0;
+
+        for(let i =0; i<user_times.length; i++){
+            average += parseFloat(user_times[i])
+        }
+
+        let total = average/5.0
+
+      averageOut.textContent = "ao5: " + total.toFixed(2)
+
+        alert("Average is " + total)
+       
+
+        list.innerHTML = ""
+        user_times = []
+        times = 1
+
+
+        
+
+      }
+
+    
+
+    
+})
+
+function reset(){
     clearInterval(intervalId);
     elapsedTime = 0;
     mins = 0;
@@ -105,8 +168,7 @@ next.addEventListener("click", ()=>{
     timer.textContent = "0.00";
     timer.style.color = "black";
 
-    
-})
+}
 
 
 let minStart = false
@@ -136,6 +198,20 @@ function updateTime(){
 
  
 }
+
+
+selectElement.addEventListener("change", function() {
+    const selectedValue = selectElement.value;
+    
+    if (selectedValue === "2x2x2") {
+      main2()
+    }
+    else{
+        main()
+    }
+  });
+
+
 
 
 
