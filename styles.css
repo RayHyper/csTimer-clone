@@ -1,11 +1,14 @@
 *{
     padding:0;
     margin:0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   
    
 }
 body{
     background-color: #eeffcc;
     font-size: 0;
+    
     
   
 }
@@ -62,6 +65,7 @@ button{
 .time{
     font-size: 240px;
     height:330px;
+    font-weight: 400;
    
    text-align: center;
    padding-top: 50px;
@@ -87,7 +91,7 @@ button{
 .top-column{
     display:flex;
     justify-content: center;
-    gap:10px;
+   gap: 10px;
     padding-top: 10px;
     
 }
@@ -132,3 +136,19 @@ li{
   
 }
 
+.next{
+    font-size: 20px;
+}
+
+a{
+    text-decoration: none;
+    color:blue
+ 
+}
+
+.checkbox{
+    background-color: #fbe3e3;
+    height:25px;
+    width:100px
+    
+}
