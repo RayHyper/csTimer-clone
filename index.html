@@ -4,14 +4,76 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cs Timer</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <p id="output"></p>
+        <div class="column">
+            <div class="top-side">
+                <div >
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+            </div>
+            <div>
+                <button class="logo">csTimer</button>
+            </div>
+            <div>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+               
+            </div>
+            <div class="sides">
+               <p class="session">Session 1</p>
+               <p class="time-box">Times</p>
+               <ol>
+                <li>1. 23.23</li>
+                <li>2. 34.34</li>
+                <li>3.99.87</li>
+               </ol>
+            </div>
+            </div>
+
+         
+
+            <div class="top">
+                <div class="top-column">
+                    <div>
+                    <select id="cubeType" name="cubeType">
+                    <option value="volvo">3x3x3</option>
+                    <option value="volvo">2x2x2</option>
+                    
+                    </select>
+                </div>
+                    <div>
+                        <p>last/<a href="">next</a> scramble</p>
+                    </div>
+                    
+                    
+                </div>
+                <p  class="scramble" id="output">Press Space To generate Scramble</p>
+                
+                <div class="time">
+                    <p>0.00</p>
+                    <p class="average">ao5:-</p>
+                    <twisty-player class="player" id="main" control-panel ="none" visualization="2D" background="none"></twisty-player>
+                    
+                </div>
+              
+            </div>
+            
+       
+
+            
+
+            
+       
+    </div>
+        
         <script type="module" src="app.js"></script>
-        <twisty-player class="player" id="main" control-panel ="none" visualization="2D" background="none"></twisty-player>
+        
     </div>
     
 </body>

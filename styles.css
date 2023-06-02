@@ -1,0 +1,134 @@
+*{
+    padding:0;
+    margin:0;
+   
+}
+body{
+    background-color: #eeffcc;
+    font-size: 0;
+    
+  
+}
+.top{
+    background-color: #ffdddd;
+    flex-grow: 1;
+    height: 90px;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 1px 15px;
+  
+   
+}
+
+.column{
+    display: flex;
+    
+
+    
+}
+
+button{
+    height: 65px;
+    width:74px;
+    background-color: #ffdddd;
+    border: solid black;
+    border-width: 1px;
+    border-radius: 4px;
+
+   
+
+}
+
+.logo{
+    font-size: 35px;
+    font-weight: bold;
+    color: yellow;
+    background-color: black;
+    width:100%
+    
+    
+}
+
+.sides{
+    background-color: #ffdddd;
+    height: 500px;
+    text-align: center;
+    width:220px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+
+
+}
+
+
+.time{
+    font-size: 240px;
+    height:330px;
+   
+   text-align: center;
+   padding-top: 50px;
+   margin-top:5%
+   
+   
+  
+}
+
+.average{
+    font-size: 50px;
+}
+
+.scramble{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 30px;
+  
+   
+}
+
+
+.top-column{
+    display:flex;
+    justify-content: center;
+    gap:10px;
+    padding-top: 10px;
+    
+}
+
+li{
+    padding-top: 17px;
+    font-size: 18px;
+    background-color: #ffdddd;
+    border:solid rgba(107, 107, 107, 0.468);
+    border-width: 1px;
+    height:50px
+    
+    
+    
+}
+
+.time-box{
+    border:rgba(106, 100, 100, 0.619) solid;
+    border-width: 1px;
+    height:25px;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.session{
+    font-size: 20px;
+    height:30px;
+    padding-top: 10px;
+    color:blue
+    
+}
+
+
+.player{
+    margin-left: 920px;
+   height:200px;
+   width:300px;
+   background-color: #ffdddd;
+   border-radius: 10px;
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  
+}
+
